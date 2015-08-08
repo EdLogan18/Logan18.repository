@@ -34,9 +34,9 @@ fanart = addonfolder + '/fanart.png'
 	
 def  menus():        		
 	dialog = xbmcgui.Dialog()
-	addDir('TV Online','-',13,'http://i.imgur.com/y22MB94.jpg')
-	addDir('Armagedon','-',19,'http://3.bp.blogspot.com/-PCiABMvpL1E/UDkAFJGmekI/AAAAAAAAADk/D0ZEDxCY0Ck/s1600/188103_197123240344214_819072657_n.jpg')
-	addDir('Megafilmes','-',20,'http://i.imgur.com/y22MB94.jpg')
+	addDir('TV Online','-',13,'http://k12tips.50webs.com/screen_shot1.png')
+	addDir('Armagedon','-',20,'http://3.bp.blogspot.com/-PCiABMvpL1E/UDkAFJGmekI/AAAAAAAAADk/D0ZEDxCY0Ck/s1600/188103_197123240344214_819072657_n.jpg')
+	addDir('Rádios','-',21,'http://2.bp.blogspot.com/-xkWOLmriFhE/ULkGb49tnpI/AAAAAAAALDk/xL3s1dfAwW0/s640/Bakelite_radio3.png')
 	
 	
 	
@@ -104,8 +104,11 @@ def categorias_Armagedon():
 	addDir('TERROR','http://www.armagedomfilmes.biz/?cat=3238',2,artfolder + 'terror.jpg')
 	addDir('THRILLER','http://www.armagedomfilmes.biz/?cat=30',2,artfolder + 'thr.jpg')
 	
-	
-	
+def radios():
+	addDir('Nacionais','http://zorro18x.esy.es/Radios/Nacionais',16,'http://cdn5.thecreativefinder.com/userfiles/members/romeuejulieta/26822/optimized-maxW950-D4_900.jpg')
+	addDir('RockRadio','http://zorro18x.esy.es/Radios/RockRadio.txt',16,'http://i.ytimg.com/vi/TLXwKxzPU5U/hqdefault.jpg')
+
+
 	
 def listar_videos(url):
 	codigo_fonte = abrir_url(url)
@@ -485,8 +488,7 @@ def gethtml(url):
     return soup
 
 def player_youtube(url):
-    #mera correção feita por Cleiton Leonel Creton!!!
-	xbmcPlayer = xbmc.Player()
+   	xbmcPlayer = xbmc.Player()
         xbmcPlayer.play('plugin://plugin.video.youtube/play/?video_id=' +url)
 		
 def listar_videostxt(url):
@@ -677,19 +679,21 @@ elif mode==12:
 elif mode==19:
 	print ""
 	CATEGORIES()
-	
-elif mode==20:
-	print ""
-	CATEGORIES() #####MUDAR DEPOIS PARA MEGAFILMES ####	
-	
 
-elif mode==21:
+elif mode==20:
 	print ""
 	categorias_Armagedon()
 	
 	                                   ####### Fim Armagedon
 	
-xbmcplugin.endOfDirectory(int(sys.argv[1]))
+elif mode==21:
+	print ""
+	radios() ##### rádios ####	
+	
+
+
+	
+
 
 
 
